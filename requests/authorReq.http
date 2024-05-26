@@ -1,0 +1,78 @@
+//registeration
+post http://localhost:4000/author-api/author
+Content-Type: application/json
+
+{
+    "role" : "author",
+    "name" : "Kiran",
+    "password" : "qwerty",
+    "email" : "kiran@mail.com"
+}
+
+###
+//login
+post http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    "role" : "author",
+    "name" : "Kiran",
+    "password" : "qwerty"
+}
+
+
+###
+//articles adding by author
+post  http://localhost:4000/author-api/article 
+Content-Type: application/json
+
+{
+    "articleId" : "{{$timestamp}}",
+    "title" : "blog-app",
+    "category" : "project",
+    "content" : "An app description is a brief summary that tells potential users what your app is all about. It’s the first thing they’ll see when browsing through app listings on the app store, and it’s your chance to make a great first impression.",
+    "dateOfCreation" : "{{$datetime iso8601}}",
+    "dateOfModification" : "{{$datetime iso8601}}",
+    "name" : "Kiran",
+    "comments" : [],
+    "status" : true
+}
+
+###
+//updates made by author
+put http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId" : "1715858584",
+    "title" : "blog-app",
+    "category" : "project",
+    "content" : "Anu app description is a brief summary that tells potential users what your app is all about. It’s the first thing they’ll see when browsing through app listings on the app store, and it’s your chance to make a great first impression.",
+    "dateOfCreation" : "2024-05-16T10:30:10.593Z",
+    "dateOfModification" : "{{$datetime iso8601}}",
+    "name" : "Kiran",
+    "comments" : [],
+    "status" : true
+}
+
+###
+//soft delete by author
+put http://localhost:4000/author-api/article/1715858584
+Content-Type: application/json
+
+{
+    "articleId" : "1715858584",
+    "title" : "blog-app",
+    "category" : "project",
+    "content" : "An app description is a brief summary that tells potential users what your app is all about. It’s the first thing they’ll see when browsing through app listings on the app store, and it’s your chance to make a great first impression.",
+    "dateOfCreation" : "2024-05-16T10:30:10.593Z",
+    "dateOfModification" : "{{$datetime iso8601}}",
+    "name" : "Kiran",
+    "comments" : [],
+    "status" : false
+}
+
+
+###
+//get authors by author's name
+get http://localhost:4000/author-api/article/Kiran

@@ -1,0 +1,39 @@
+//USER:
+//register
+post http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "role" : "user",
+    "name" : "Kiran",
+    "password" : "qwerty",
+    "email" : "kiran@mail.com"
+}
+
+###
+//login
+post http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "role" : "user",
+    "name" : "Kiran",
+    "password" : "qwerty"
+}
+
+###
+//reading articles of all users:
+get http://localhost:4000/user-api/articles
+
+
+###
+//writing a comment:
+post http://localhost:4000/user-api/comment/1715858584
+Content-Type: application/json
+
+{
+    "name" : "ritwick",
+    "comment" : "no comment"
+}
+
+get http://localhost:4000/user-api
