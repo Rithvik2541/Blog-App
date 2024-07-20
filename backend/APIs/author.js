@@ -59,7 +59,7 @@ authorApp.post('/login',async(req,res)=>{
 
 
 //adding articles for author:
-authorApp.post('/article',verifyToken, async(req,res)=>{
+authorApp.post('/article',verifyToken , async(req,res)=>{
     const article = req.body;
     await articlesCollection.insertOne(article)
     res.send({message: "article added"})

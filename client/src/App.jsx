@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import Home from "./components/Home"
-import SignUp from './components/signUp';
-import SignIn from './components/signIn';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
 import Root from './components/Root';
 import AuthorProfile from './components/AuthorProfile';
 import UserProfile from './components/UserProfile';
